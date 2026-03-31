@@ -17,9 +17,10 @@ a.Imprime();
 */
 Console.WriteLine();
 Locomotora b = new Locomotora();
-b.AgrergaInt(5);
-b.AgrergaInt(3);
-b.AgrergaInt(10);
+b.AgregaInt(5);
+b.AgregaInt(3);
+b.AgregaInt(10);
+b.AgregaFin(7);
 b.Imprime();
 
 

@@ -10,7 +10,7 @@ namespace listaenlazada
     {
         public Vagon Primero {  get; set; }
 
-        public void AgrergaInt(int valor)
+        public void AgregaInt(int valor)
         {
             //Agregar un dato al inicio
 
@@ -26,6 +26,27 @@ namespace listaenlazada
                 this.Primero = nuevo;
             }
         }
+      
+        public void AgregaFin(int valor)
+        {
+            //Agregar un dato al inicio
+
+            Vagon nuevo = new Vagon(valor);
+            if (this.Primero == null)
+            {
+                this.Primero = nuevo;
+            }
+            else
+            {
+                Vagon ultimo = this.Primero;
+                while (ultimo.Sig != null)
+                {
+                    ultimo = ultimo.Sig;
+                }
+                ultimo.Sig = nuevo;
+            }
+        }
+
         public void Imprime()
         {
             Vagon tmp = Primero;
@@ -34,6 +55,7 @@ namespace listaenlazada
                 Console.WriteLine($"{tmp.Dato}, ");
                 tmp = tmp.Sig;
             }
+            
         }
     }
 }
