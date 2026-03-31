@@ -10,6 +10,22 @@ namespace listaenlazada
     {
         public Vagon Primero {  get; set; }
 
+        public void AgrergaInt(int valor)
+        {
+            //Agregar un dato al inicio
+
+            Vagon nuevo = new Vagon(valor);
+            if (this.Primero == null)
+            {
+                this.Primero = nuevo;
+            }
+            else
+            {
+                Vagon prim = this.Primero;
+                nuevo.Sig = prim;
+                this.Primero = nuevo;
+            }
+        }
         public void Imprime()
         {
             Vagon tmp = Primero;
