@@ -23,4 +23,10 @@ b.AgregaInt(10);
 b.AgregaFin(7);
 b.Imprime();
 
+Console.WriteLine(b.Get(2));
+Console.WriteLine($"Hay {b.Length} elementos");
+Console.WriteLine("Ingrese valor a buscar");
+int vbus = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(b.BuscaValor(vbus)? "Joel Estuvo aqui" : "Pero lo buscaba tanto");
+
 
