@@ -80,6 +80,65 @@ namespace listaenlazada
             return false;
 
         }
+
+        //Listas enlazadas
+        public int Get(int idx)
+        {
+            Vagon tmp = Primero;
+            int indice = 0;
+            while (tmp != null)
+            {
+                if (indice == idx)
+                {
+                    return tmp.Dato;
+                }
+                indice++;
+                tmp = tmp.Sig;
+            }
+            return int.MinValue;
+        }
+        public int Length()
+        {
+            Vagon tmp = Primero;
+            int contar = 0;
+            while (tmp != null)
+            {
+                contar++;
+                tmp = tmp.Sig;
+            }
+            return contar;
+        }
+        public void MerclaAlFinal(Locomotora listfin)
+        {
+            //Los elementos de listFin los agregaran al final de la lista actual 
+            int cant = listfin.Length();
+            {
+                for (int i = 0; i <= cant; i++)
+                {
+                    this.AgregaFin(listfin.Get(i));
+                }
+            }
+        }
+
+        public void MerclaAlFinal2(Locomotora listfin)
+        {
+            //Los eleemntos de listFin los agregaran al dinal de la lista actual
+            Vagon PrivagB = listfin.Primero;
+
+            //llegas al ultimo 
+            Vagon tmp = Primero;
+            if (this.Primero == null)
+            {
+                this.Primero = PrivagB;
+            }
+            else
+            {
+                while (tmp != null)
+                {
+                    tmp = tmp.Sig;
+                }
+            }
+        }
         public void Imprime()
         {
             Vagon tmp = Primero;
